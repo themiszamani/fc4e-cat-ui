@@ -130,13 +130,8 @@
 
 .cat-admin-container {
   width: 100%;
-}
-
-@media (width >= 1400px) {
-  .cat-admin-container {
-    width: 80%;
-    margin: 0 auto;
-  }
+  min-height: 60vh;
+  border-top: 1px solid #e5e5e5;
 }
 
 .cat-view-reverse {
@@ -187,8 +182,7 @@ h6.chocolate {
 
 .cat-main-view {
   min-height: 60vh;
-  padding: 10px;
-  background-color: #e8e8e8;
+  padding-top: 10px;
 }
 
 .cat-eval-fail {
@@ -273,6 +267,66 @@ h6.chocolate {
 
 .cat-nav-link-light:hover {
   background-color: #e2e1e2;
+}
+
+.cat-sidebar-container {
+  width: 250px;
+  height: 100%;
+  padding: 0 1rem 1rem;
+  background-color: #fafafa;
+  border-right: 1px solid #e5e7eb;
+}
+
+.cat-sidebar-container .cat-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.cat-sidebar-container .cat-sidebar-section {
+  padding-left: 0.8rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1rem;
+  color: #3f3f46;
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+  opacity: 0.7;
+}
+
+.cat-sidebar-container .cat-nav-link-item {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  color: #18181b;
+  text-decoration: none;
+  letter-spacing: 0.04rem;
+  border-radius: 0.375rem;
+}
+
+.cat-sidebar-container .cat-nav-link-item:hover {
+  background-color: #f3f4f6;
+}
+
+.cat-sidebar-container .cat-nav-link-item.active {
+  color: #000;
+  background-color: #e2e1e2;
+}
+
+.cat-sidebar-container .cat-nav-link-item svg {
+  margin-right: 0.6rem;
+  color: #6c757d;
+}
+
+.cat-sidebar-container .cat-nav-link-item.active svg {
+  color: #000;
 }
 
 .cat-action-approve-link:hover {

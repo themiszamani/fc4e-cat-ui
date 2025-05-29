@@ -20,141 +20,121 @@ export default function AdminMenu() {
   const { t } = useTranslation();
 
   return (
-    <div className="px-3 py-2">
-      <ul className="nav flex-column mt-2">
-        <h5>
-          <strong>{t("personal_menu")}</strong>
-        </h5>
-        <li
-          className={`nav-item rounded  ${isSel(userPath, "profile") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/profile"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("profile")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded  ${isSel(userPath, "validations") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/validations"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("validations")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(userPath, "assessments") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/assessments"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("assessments")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(userPath, "subjects") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/subjects"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("subjects")}
-          </Link>
-        </li>
-        <hr />
+    <div className="cat-sidebar-container">
+      <ul className="cat-sidebar-nav">
+        <div>
+          <h3 className="cat-sidebar-section">{t("personal_menu")}</h3>
+          <div>
+            <li>
+              <Link
+                to="/profile"
+                className={`cat-nav-link-item ${isSel(userPath, "profile") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("profile")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/validations"
+                className={`cat-nav-link-item ${isSel(userPath, "validations") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("validations")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/assessments"
+                className={`cat-nav-link-item ${isSel(userPath, "assessments") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("assessments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/subjects"
+                className={`cat-nav-link-item ${isSel(userPath, "subjects") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("subjects")}
+              </Link>
+            </li>
+          </div>
+        </div>
 
-        <h5>
-          <strong>{t("manage")}</strong>
-        </h5>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "users") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/users"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("users")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "validations") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/validations"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaCheckCircle className="text-muted me-2" /> {t("validations")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "assessments") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/assessments"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaFileCircleCheck className="text-muted me-2" /> {t("assessments")}
-          </Link>
-        </li>
-        <hr />
+        <div>
+          <h3 className="cat-sidebar-section">{t("manage")}</h3>
+          <div>
+            <li>
+              <Link
+                to="/admin/users"
+                className={`cat-nav-link-item ${isSel(adminPath, "users") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("users")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/validations"
+                className={`cat-nav-link-item ${isSel(adminPath, "validations") ? "active" : ""}`}
+              >
+                <FaCheckCircle /> {t("validations")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/assessments"
+                className={`cat-nav-link-item ${isSel(adminPath, "assessments") ? "active" : ""}`}
+              >
+                <FaFileCircleCheck /> {t("assessments")}
+              </Link>
+            </li>
+          </div>
+        </div>
 
-        <h5>
-          <strong> {t("library")}</strong>
-        </h5>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "motivations") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/motivations"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaFile className="text-muted me-2" /> {t("motivations")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "principles") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/principles"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaTags className="text-muted me-2" /> {t("principles")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "criteria") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/criteria"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaAward className="text-muted me-2" /> {t("criteria")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "tests") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/tests"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaClipboardQuestion className="text-muted me-2" /> {t("tests")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(adminPath, "metrics") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/admin/metrics"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaBorderNone className="text-muted me-2" /> {t("metrics")}
-          </Link>
-        </li>
+        <div>
+          <h3 className="cat-sidebar-section">{t("library")}</h3>
+          <div>
+            <li>
+              <Link
+                to="/admin/motivations"
+                className={`cat-nav-link-item ${isSel(adminPath, "motivations") ? "active" : ""}`}
+              >
+                <FaFile /> {t("motivations")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/principles"
+                className={`cat-nav-link-item ${isSel(adminPath, "principles") ? "active" : ""}`}
+              >
+                <FaTags /> {t("principles")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/criteria"
+                className={`cat-nav-link-item ${isSel(adminPath, "criteria") ? "active" : ""}`}
+              >
+                <FaAward /> {t("criteria")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/tests"
+                className={`cat-nav-link-item ${isSel(adminPath, "tests") ? "active" : ""}`}
+              >
+                <FaClipboardQuestion /> {t("tests")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin/metrics"
+                className={`cat-nav-link-item ${isSel(adminPath, "metrics") ? "active" : ""}`}
+              >
+                <FaBorderNone /> {t("metrics")}
+              </Link>
+            </li>
+          </div>
+        </div>
       </ul>
     </div>
   );
