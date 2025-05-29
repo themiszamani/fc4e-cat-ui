@@ -107,16 +107,16 @@ export function ProtectedRoute() {
   if (authenticated && isSuccess && profileData) {
     return profileData.user_type.toLowerCase() === "admin" ? (
       <div className="cat-admin-container d-flex flex-row">
-        <div className="bg-light p-4 my-4 mb-5 rounded">
+        <div>
           <AdminMenu />
         </div>
-        <div className="rounded bg-white container-fluid mb-4 flex-grow-1">
+        <div className="bg-white container-fluid mb-4 flex-grow-1">
           <Outlet />
         </div>
       </div>
     ) : (
       <div className="cat-admin-container d-flex flex-row">
-        <div className="bg-light p-4 my-4 mb-5 rounded">
+        <div>
           <UserMenu />
         </div>
         <div className="rounded bg-white container-fluid mb-4 flex-grow-1">

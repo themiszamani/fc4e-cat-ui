@@ -11,51 +11,45 @@ export default function UserMenu() {
   const { t } = useTranslation();
 
   return (
-    <div className="px-3 py-2">
-      <ul className="nav flex-column mt-2">
-        <h5>
-          <strong>{t("personalMenu")}</strong>
-        </h5>
-        <li
-          className={`nav-item rounded  ${isSel(userPath, "profile") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/profile"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("profile")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded  ${isSel(userPath, "validations") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/validations"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("validations")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(userPath, "assessments") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/assessments"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("assessments")}
-          </Link>
-        </li>
-        <li
-          className={`nav-item rounded ${isSel(userPath, "subjects") ? "cat-menu-selected" : ""}`}
-        >
-          <Link
-            to="/subjects"
-            className="rounded cat-nav-link-light px-3 text-nowrap"
-          >
-            <FaUsers className="text-muted me-2" /> {t("subjects")}
-          </Link>
-        </li>
+    <div className="cat-sidebar-container">
+      <ul className="cat-sidebar-nav">
+        <div>
+          <h3 className="cat-sidebar-section">{t("personal_menu")}</h3>
+          <div>
+            <li>
+              <Link
+                to="/profile"
+                className={`cat-nav-link-item ${isSel(userPath, "profile") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("profile")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/validations"
+                className={`cat-nav-link-item ${isSel(userPath, "validations") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("validations")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/assessments"
+                className={`cat-nav-link-item ${isSel(userPath, "assessments") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("assessments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/subjects"
+                className={`cat-nav-link-item ${isSel(userPath, "subjects") ? "active" : ""}`}
+              >
+                <FaUsers /> {t("subjects")}
+              </Link>
+            </li>
+          </div>
+        </div>
       </ul>
     </div>
   );
