@@ -102,7 +102,8 @@ export const TestBinaryParamForm = (props: AssessmentTestProps) => {
         <p></p>
         {testParams[testParams.length - 1] === "evidence" && (
           <div className="mt-2">
-            <span className="fw-light-500 text-sm text-secondary">CAT-889
+            <span className="fw-light-500 text-sm text-secondary">
+              CAT-889
               <strong>{textParams[1]} </strong>
               <TestToolTip
                 tipId={"evidence-" + props.test.id}
