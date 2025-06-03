@@ -103,16 +103,16 @@ export const EvidenceURLS = (props: EvidenceURLSProps) => {
       </Row>
       {error && <small className="text-danger">{error}</small>}
 
-      {urlList.map((city, index) => (
-        <Row className="mt-2">
+      {urlList.map((evid, index) => (
+        <Row className="mt-2" key={index}>
           <Col md={10}>
             <p className="lh-sm">
               <small>
-                <a key={index} href={city.url} target="_blank">
+                <a key={index} href={evid.url} target="_blank" rel="noreferrer">
                   # Evidence [{index}]
                 </a>
-                {}
-                <span> {city.description}</span>
+
+                <span> {evid.description}</span>
               </small>
             </p>
           </Col>
